@@ -171,8 +171,9 @@ const loginUser = async function (req, res) {
         });
 
     const token = jwt.sign(
-      { userId: findUser._id, expiresIn: "1d" },
-      "Books Management"
+      { userId: findUser._id },
+      "Books Management",
+      { expiresIn: "1d" }
     );
 
     return res
